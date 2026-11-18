@@ -1,23 +1,85 @@
-const cards = document.querySelectorAll('.skill-card');
+const skills = [
+    {
+        title: 'Web Design',
+        category: 'Programming',
+        description: 'Build your first website with HTML and CSS.',
+        price: 20,
+        tutor: 'Estavao',
+        formats: ['In-person', 'Virtual']
+    },
+    {
+        title: 'Python Tutoring',
+        category: 'Programming',
+        description: 'Learn Python basics with hands-on practice problems.',
+        price: 25,
+        tutor: 'Vinicius Junior',
+        formats: ['Virtual']
+    },
+    {
+        title: 'Guitar Lessons',
+        category: 'Music',
+        description: 'Learn chords and your first songs, beginners welcome.',
+        price: 15,
+        tutor: 'Neymar',
+        formats: ['In-person']
+    },
+    {
+        title: 'Resume Review',
+        category: 'Career',
+        description: 'Get your resume ready for internships and interviews.',
+        price: 0,
+        tutor: 'Raphinha',
+        formats: ['Virtual']
+    }
+]
 
-cards.forEach(card => {
-    card.addEventListener('click', () => {
-        // Remove the highlight from all cards, then highlight the clicked one
-        cards.forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
+const grid = document.getElementById('skill-grid');
 
-        // Read the information from the card
-        const title = card.querySelector('.title').textContent;
-        const price = card.querySelector('.price').textContent;
-        const tutor = card.querySelector('.provider-name').textContent;
+function renderSkills(skillList) {
+    grid.innerHTML = '';
 
-        // Turn the badges into text, like "In-person and Virtual"
-        const badges = card.querySelectorAll('.badge');
-        const formats = Array.from(badges)
-            .map(badge => badge.textContent.replace('✓', '').trim())
-            .join(' and ');
+    skillList.forEach(skill => {
+        const card = document.createElement('article');
+        card.className = 'skill-card';
 
-        // Show the information in a popup
-        alert(`${title}\n${tutor}\nPrice: ${price}\nAvailable: ${formats}\n\nBooking is coming soon!`);
+        const badges = skill.formats
+            .map(format => `<span class="badge">✓ ${format}</span>`)
+            .join('');
+
+        card.innerHTML = `
+            <h3 class="title">${skill.title}</h3>
+            <p class="description">${skill.description}</p>
+            <p class="price">$${skill.price}/hour</p>
+            <p class="provider-name">Tutor: ${skill.tutor}</p>
+            <div class="card-footer">
+                <div class="format-badges">${badges}</div>
+            </div>
+        `; 
+
+        // Click a card to highlight it and see its details
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.skill-card')
+                .forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            alert(`${skill.title}\nTutor: ${skill.tutor}\nPrice: $${skill.price}/hour\nAvailable: ${skill.formats.join(' and ')}`);
+        });
+
+        grid.appendChild(card);
     });
+}
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.dataset.category;
+        const filtered = filterSkillsByCategory(skills, category);
+        renderSkills(filtered);
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    });
+
 });
+
+renderSkills(skills);
