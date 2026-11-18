@@ -4,5 +4,8 @@ function filterSkillsByCategory(skills, category) {
         return skills;
     }
 
-}
+    return skills.filter(skill => skill.category === category)
+    };
+
+
 module.exports = {filterSkillsByCategory};
