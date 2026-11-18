@@ -8,4 +8,6 @@ function filterSkillsByCategory(skills, category) {
     };
 
 
-module.exports = {filterSkillsByCategory};
+if (typeof module !== 'undefined') {
+    module.exports = { filterSkillsByCategory };
+}
