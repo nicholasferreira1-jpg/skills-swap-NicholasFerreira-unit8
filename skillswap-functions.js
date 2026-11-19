@@ -8,10 +8,11 @@ function filterSkillsByCategory(skills, category) {
     };
 
 
-if (typeof module !== 'undefined') {
-    module.exports = { filterSkillsByCategory };
+function calculateTotalCost(rate, hours) {
+    return rate * hours;
 }
 
-function calculateTotalCost(hours, rate) {
-    return hours * rate;
+if (typeof module !== 'undefined') {
+    module.exports = { filterSkillsByCategory, calculateTotalCost};
 }
+
