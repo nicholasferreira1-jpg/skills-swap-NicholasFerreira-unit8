@@ -1,0 +1,24 @@
+{
+  "name": "skills-swap-nicholasferreira-unit8",
+  "version": "1.0.0",
+  "description": "Skill Swap is a platform for college students and recent graduates who are seeking help in an specific skill or need a way to earn money. Students can find affordable tutors for the skills they need and pay for it or offer their own skill to trade with the tutor so they can do a hour-for hour skill trade with no money exchange.",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholasferreira1-jpg/skills-swap-NicholasFerreira-unit8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nicholasferreira1-jpg/skills-swap-NicholasFerreira-unit8/issues"
+  },
+  "homepage": "https://github.com/nicholasferreira1-jpg/skills-swap-NicholasFerreira-unit8#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}

@@ -28,38 +28,14 @@
             <a href="#" class="button">Find a Tutor</a>
         </section>
         <section class="skill-offerings">
-            <h2>Most Searched Skills</h2>
-            <div class="skill-grid">
-                <article class="skill-card">
-                    <h3 class="title">Web Design</h3>
-                    <p class="description">Build your first website with HTML and CSS.</p>
-                    <p class="price">$20/hour</p>
-                    <p class="provider-name">Tutor: Name</p>
-                    <div class="format-badges">
-                        <span class="badge">✓ In-person</span>
-                        <span class="badge">✓ Virtual</span>
-                    </div>
-                </article>
-
-                <article class="skill-card">
-                    <h3 class="title">Chemistry</h3>
-                    <p class="description">Work through reaction mechanisms and synthesis problems</p>
-                    <p class="price">$25/hour</p>
-                    <p class="provider-name">Tutor: Name</p>
-                    <div class="format-badges">
-                        <span class="badge">✓ In-person</span>
-                    </div>
-                </article>
-
-                <article class="skill-card">
-                    <h3 class="title">Spanish</h3>
-                    <p class="description">Conversation practice and grammar help</p>
-                    <p class="price">$15/hour</p>
-                    <p class="provider-name">Tutor: Name</p>
-                    <div class="format-badges">
-                        <span class="badge">✓ Virtual</span>
-                    </div>
-                </article>
+            <h2>Search Skills</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn" data-category="All">All</button>
+                <button class="filter-btn" data-category="Programming">Programming</button>
+                <button class="filter-btn" data-category="Music">Music</button>
+                <button class="filter-btn" data-category="Career">Career</button>
+            </div>
+            <div class="skills-grid" id="skill-grid">
             </div>
         </section>
 
@@ -67,14 +43,13 @@
     <footer>
         <h2> 2026 Skill Swap</h2>
         <nav class="footer-links">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Browse Skills</a></li>
-                <li><a href="#">Offer Skills</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
+            <a href="#">Home</a>
+            <a href="#">Browse Skills</a>
+            <a href="#">Offer Skills</a>
+            <a href="#">About</a>
         </nav>
     </footer>
+    <script src="skillswap-functions.js"></script>
     <script src="script.js"></script>
 </body>
 
