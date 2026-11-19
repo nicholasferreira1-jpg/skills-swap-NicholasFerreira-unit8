@@ -11,3 +11,7 @@ function filterSkillsByCategory(skills, category) {
 if (typeof module !== 'undefined') {
     module.exports = { filterSkillsByCategory };
 }
+
+function calculateTotalCost(hours, rate) {
+    return hours * rate;
+}
