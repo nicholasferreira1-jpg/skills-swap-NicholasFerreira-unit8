@@ -5,7 +5,7 @@ function filterSkillsByCategory(skills, category) {
     }
 
     return skills.filter(skill => skill.category === category)
-    };
+};
 
 
 function calculateTotalCost(rate, hours) {
@@ -13,6 +13,6 @@ function calculateTotalCost(rate, hours) {
 }
 
 if (typeof module !== 'undefined') {
-    module.exports = { filterSkillsByCategory, calculateTotalCost};
+    module.exports = { filterSkillsByCategory, calculateTotalCost };
 }
 

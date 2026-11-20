@@ -210,3 +210,51 @@ footer h2 {
     background-color: #2b4c7e;
     color: white;
 }
+
+/* Cost calculator */
+.cost-calculator {
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.cost-calculator h2 {
+    margin-bottom: 8px;
+}
+
+.calculator-form {
+    max-width: 360px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.calculator-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#calculate-btn {
+    background-color: #f28c28;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#calculate-btn:hover {
+    background-color: #d9761a;
+}
+
+#cost-result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    min-height: 1.5em;
+}

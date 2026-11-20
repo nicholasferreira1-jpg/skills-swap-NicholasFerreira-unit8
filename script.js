@@ -83,3 +83,22 @@ filterButtons.forEach(button => {
 });
 
 renderSkills(skills);
+
+const rateInput = document.getElementById('rate-input');
+const hoursInput = document.getElementById('hours-input');
+const calculateButton = document.getElementById('calculate-btn');
+const costResult = document.getElementById('cost-result');
+
+calculateButton.addEventListener('click', () => {
+    const rate = parseFloat(rateInput.value);
+    const hours = parseFloat(hoursInput.value);
+
+    // Check for empty or negative values
+    if (isNaN(rate) || isNaN(hours) || rate < 0 || hours < 0) {
+        costResult.textContent = 'Please enter a valid rate and number of hours.';
+        return;
+    }
+
+    const total = calculateTotalCost(rate, hours);
+    costResult.textContent = `Total cost: $${total.toFixed(2)}`;
+});
