@@ -35,8 +35,8 @@ const skills = [
 
 const grid = document.getElementById('skill-grid');
 
-function renderSkills(skillList) {
-    grid.innerHTML = '';
+function renderSkills(skillList, container = grid) {
+    container.innerHTML = '';
 
     skillList.forEach(skill => {
         const card = document.createElement('article');
@@ -54,7 +54,7 @@ function renderSkills(skillList) {
             <div class="card-footer">
                 <div class="format-badges">${badges}</div>
             </div>
-        `; 
+        `;
 
         // Click a card to highlight it and see its details
         card.addEventListener('click', () => {
@@ -64,7 +64,7 @@ function renderSkills(skillList) {
             alert(`${skill.title}\nTutor: ${skill.tutor}\nPrice: $${skill.price}/hour\nAvailable: ${skill.formats.join(' and ')}`);
         });
 
-        grid.appendChild(card);
+        container.appendChild(card);
     });
 }
 
@@ -101,4 +101,16 @@ calculateButton.addEventListener('click', () => {
 
     const total = calculateTotalCost(rate, hours);
     costResult.textContent = `Total cost: $${total.toFixed(2)}`;
+});
+
+const matchButton = document.getElementById('match-btn');
+
+matchButton.addEventListener('click', () => {
+    const userNeeds = {
+        category: document.getElementById('category-select').value,
+        maxPrice: parseFloat(document.getElementById('max-price-input').value)
+    };
+
+    const matches = matchSkillsToUser(userNeeds, skills);
+    renderSkills(matches, document.getElementById('match-results'));
 });
