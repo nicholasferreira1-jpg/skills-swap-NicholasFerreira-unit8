@@ -258,3 +258,15 @@ footer h2 {
     text-align: center;
     min-height: 1.5em;
 }
+
+/* Find Match Skills */
+.find-match {
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+#match-results {
+    max-width: 1000px;
+    margin: 20px auto 0;
+    text-align: left;
+}
